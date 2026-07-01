@@ -1,0 +1,238 @@
+/* Hero Section base */
+.hero {
+    padding: 6rem 0;
+    position: relative;
+}
+
+/* Background Blobs */
+.bg-blobs {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    overflow: hidden; z-index: -2;
+    pointer-events: none;
+}
+.bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+[data-theme="dark"] .bg-blob {
+    opacity: 0.08;
+}
+.blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--bg-alt); }
+.blob-2 { top: 40%; right: -20%; width: 60vw; height: 60vw; background: var(--accent-mint); }
+.blob-3 { bottom: -20%; left: 20%; width: 40vw; height: 40vw; background: var(--accent-rose); }
+
+.hero-title {
+    font-size: 3.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+/* Assessment Page Layout */
+.assessment-layout {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.step-content {
+    display: none;
+    animation: fadeIn var(--transition-normal);
+}
+
+.step-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+/* Results Page Layout */
+.results-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.results-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.factors-list {
+    list-style: none;
+}
+
+.factor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.factor-item:last-child {
+    border-bottom: none;
+}
+
+.factor-icon {
+    color: var(--primary);
+    background-color: var(--bg-alt);
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-plan {
+    margin-top: 2rem;
+    background-color: var(--bg-alt);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+}
+
+/* Feature/Content Sections */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.5rem; }
+    .results-layout { grid-template-columns: 1fr; }
+}
+
+/* Hero Grid Layout */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+}
+.hero-title.text-left, .hero-subtitle.text-left { text-align: left; }
+.hero-title-group { display: flex; flex-direction: column; gap: 1rem; }
+.hero-action-group { margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+.hero-action-group .disclaimer { margin: 0; max-width: 100%; text-align: left; }
+
+/* Trust Strip */
+.trust-strip {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.trust-item svg { color: var(--primary); }
+
+/* Hero Carousel */
+.hero-carousel-block { width: 100%; max-width: 450px; margin: 0 auto; }
+.hero-carousel {
+    padding: 0; 
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+}
+.carousel-slides {
+    flex-grow: 1;
+    position: relative;
+    background: var(--bg-base);
+}
+.carousel-slide {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0;
+    transition: opacity 600ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    pointer-events: none;
+}
+.carousel-slide.active { opacity: 1; pointer-events: auto; }
+.slide-image { width: 120px; height: 120px; margin-bottom: 1.5rem; }
+.slide-caption { font-size: 1.1rem; font-weight: 600; text-align: center; color: var(--text-primary); margin: 0;}
+
+/* Controls */
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-soft);
+}
+.carousel-play-pause {
+    background: none; border: none; cursor: pointer; color: var(--text-secondary);
+    display: flex; align-items: center; justify-content: center;
+    padding: 0.5rem; border-radius: 50%;
+}
+.carousel-play-pause:hover { color: var(--primary-dark); background: var(--bg-alt); }
+.carousel-dots { display: flex; gap: 0.5rem; }
+.carousel-dot {
+    width: 8px; height: 8px; border-radius: 50%; border: none;
+    background: var(--border-soft); cursor: pointer; transition: background 200ms;
+}
+.carousel-dot.active { background: var(--primary); transform: scale(1.2); }
+.carousel-dot:hover:not(.active) { background: var(--primary-light); }
+
+/* Animation */
+.fade-in-reveal { animation: fadeInReveal 500ms ease-out forwards; }
+@keyframes fadeInReveal { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .fade-in-reveal { animation: none; opacity: 1; transform: none; } }
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+    .hero-title.text-left, .hero-subtitle.text-left { text-align: center; }
+    .hero-title-group { align-items: center; }
+    .trust-strip { justify-content: center; }
+    .hero-action-group { align-items: center; }
+    .hero-action-group .disclaimer { text-align: center; }
+    .hero-carousel-block { max-width: 500px; }
+}
+@media (max-width: 767px) {
+    .hero-grid { display: flex; flex-direction: column; gap: 2rem; }
+    .hero-title-group { order: 1; }
+    .hero-carousel-block { order: 2; width: 100%; }
+    .hero-action-group { order: 3; }
+    .hero-carousel { aspect-ratio: auto; height: 260px; }
+    .slide-image { width: 80px; height: 80px; margin-bottom: 1rem; }
+    .slide-caption { font-size: 1rem; }
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS Risk Check | Know Your Health</title>
+    <meta name="description" content="A calm, private, and research-backed screening tool for Polycystic Ovary Syndrome (PCOS) risk factors.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="learn.html">About PCOS</a></li>
+                    <li><a href="about.html">Methodology</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Background Blobs -->
+        <div class="bg-blobs" aria-hidden="true">
+            <div class="bg-blob blob-1"></div>
+            <div class="bg-blob blob-2"></div>
+            <div class="bg-blob blob-3"></div>
+        </div>
+
+        <section class="hero fade-in-reveal">
+            <div class="container hero-grid">
+                
+                <div class="hero-title-group">
+                    <h1 class="hero-title text-left">Understand Your PCOS Risk in Minutes</h1>
+                    <p class="hero-subtitle text-left">A simple, private, and research-backed questionnaire to help you identify potential signs of Polycystic Ovary Syndrome.</p>
+                    
+                    <div class="trust-strip">
+                        <div class="trust-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span>Private & on-device</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span>Takes ~3 minutes</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            <span>Research-backed model</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-carousel-block">
+                    <div class="hero-carousel card" role="region" aria-roledescription="carousel" aria-label="PCOS awareness highlights">
+                        <div class="carousel-slides">
+                            <div class="carousel-slide active" role="group" aria-roledescription="slide" aria-label="Slide 1 of 5" aria-hidden="false">
+                                <div class="slide-image">
+                                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                        <rect x="20" y="25" width="60" height="55" rx="8" fill="var(--bg-alt)" stroke="var(--primary)" stroke-width="3"/>
+                                        <path d="M35 15 v15 M65 15 v15" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/>
+                                        <line x1="20" y1="45" x2="80" y2="45" stroke="var(--primary)" stroke-width="3"/>
+                                        <circle cx="40" cy="60" r="5" fill="var(--accent-rose)"/>
+                                        <circle cx="60" cy="60" r="5" fill="var(--accent-mint)"/>
+                                        <circle cx="50" cy="70" r="5" fill="var(--accent-amber)"/>
+                                    </svg>
+                                </div>
+                                <p class="slide-caption">Track your cycle — patterns matter.</p>
+                            </div>
+                            
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 5" aria-hidden="true">
+                                <div class="slide-image">
+                                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                        <circle cx="50" cy="35" r="12" fill="var(--accent-amber)"/>
+                                        <path d="M25 90 C 25 60, 75 60, 75 90" fill="var(--bg-alt)" stroke="var(--primary)" stroke-width="3"/>
+                                        <path d="M40 90 C 40 70, 60 70, 60 90" fill="var(--accent-rose)" opacity="0.5"/>
+                                    </svg>
+                                </div>
+                                <p class="slide-caption">Know your body. Early awareness helps.</p>
+                            </div>
+
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 5" aria-hidden="true">
+                                <div class="slide-image">
+                                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                        <ellipse cx="50" cy="55" rx="35" ry="15" fill="var(--bg-alt)" stroke="var(--primary)" stroke-width="3"/>
+                                        <path d="M30 45 C 40 20, 60 20, 70 45 Z" fill="var(--accent-mint)"/>
+                                        <path d="M50 45 L50 25" stroke="var(--primary)" stroke-width="2"/>
+                                        <circle cx="35" cy="55" r="4" fill="var(--accent-amber)"/>
+                                        <circle cx="65" cy="55" r="4" fill="var(--accent-rose)"/>
+                                    </svg>
+                                </div>
+                                <p class="slide-caption">Small lifestyle habits add up.</p>
+                            </div>
+
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 5" aria-hidden="true">
+                                <div class="slide-image">
+                                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                        <circle cx="35" cy="40" r="10" fill="var(--accent-mint)"/>
+                                        <path d="M15 80 C 15 55, 55 55, 55 80" fill="var(--bg-alt)" stroke="var(--primary)" stroke-width="3"/>
+                                        <circle cx="70" cy="35" r="8" fill="var(--accent-rose)"/>
+                                        <path d="M55 80 C 55 60, 85 60, 85 80" fill="none" stroke="var(--primary)" stroke-width="3"/>
+                                        <path d="M50 20 Q 65 10 80 20 Q 85 30 75 40" fill="var(--accent-amber)" opacity="0.6"/>
+                                    </svg>
+                                </div>
+                                <p class="slide-caption">A specialist can give you real answers.</p>
+                            </div>
+
+                            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 of 5" aria-hidden="true">
+                                <div class="slide-image">
+                                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                                        <path d="M20 60 C 40 80, 60 80, 80 60" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/>
+                                        <path d="M40 70 L 50 40 L 60 70" fill="none" stroke="var(--accent-mint)" stroke-width="4" stroke-linejoin="round"/>
+                                        <circle cx="50" cy="30" r="6" fill="var(--accent-rose)"/>
+                                        <circle cx="40" cy="45" r="4" fill="var(--accent-amber)"/>
+                                        <circle cx="60" cy="45" r="4" fill="var(--accent-amber)"/>
+                                    </svg>
+                                </div>
+                                <p class="slide-caption">You're not alone in this.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-controls">
+                            <button class="carousel-play-pause" aria-label="Pause carousel">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
+                            </button>
+                            <div class="carousel-dots">
+                                <button class="carousel-dot active" aria-label="Go to slide 1" aria-selected="true"></button>
+                                <button class="carousel-dot" aria-label="Go to slide 2" aria-selected="false"></button>
+                                <button class="carousel-dot" aria-label="Go to slide 3" aria-selected="false"></button>
+                                <button class="carousel-dot" aria-label="Go to slide 4" aria-selected="false"></button>
+                                <button class="carousel-dot" aria-label="Go to slide 5" aria-selected="false"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-action-group">
+                    <a href="assessment.html" class="btn btn-primary cta-btn">
+                        Check My Risk
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <div class="disclaimer mt-3">
+                        <strong>Note:</strong> This tool provides an educational risk estimate based on a statistical model and is not a substitute for professional medical diagnosis.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section bg-surface">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="card card-hover text-center">
+                        <div class="factor-icon" style="margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h3>100% Private</h3>
+                        <p>Your health data never leaves your browser. We don't save or track your answers.</p>
+                    </div>
+                    <div class="card card-hover text-center">
+                        <div class="factor-icon" style="margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Quick & Simple</h3>
+                        <p>Answer 15 easy questions about your symptoms and lifestyle in under 3 minutes.</p>
+                    </div>
+                    <div class="card card-hover text-center">
+                        <div class="factor-icon" style="margin: 0 auto 1.5rem; width: 64px; height: 64px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <h3>Data-Driven</h3>
+                        <p>Built using a machine learning model trained on real clinical data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="learn.html">About PCOS</a>
+                <a href="about.html">Methodology & Privacy</a>
+            </div>
+            <p class="text-secondary text-center" style="font-size: 0.85rem; max-width: 600px;">
+                This tool provides an educational risk estimate based on a statistical model and is not a substitute for professional medical diagnosis. Please consult a healthcare provider for any medical concerns.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/hero-carousel.js"></script>
+</body>
+</html>

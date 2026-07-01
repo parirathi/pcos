@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment | PCOS Risk Check</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="learn.html">About PCOS</a></li>
+                    <li><a href="about.html">Methodology</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section assessment-layout">
+        <div class="card">
+            <div class="progress-container">
+                <div class="progress-steps">
+                    <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+                    <div class="step-indicator active" id="indicator-1">1</div>
+                    <div class="step-indicator" id="indicator-2">2</div>
+                    <div class="step-indicator" id="indicator-3">3</div>
+                    <div class="step-indicator" id="indicator-4">4</div>
+                </div>
+                <div class="step-labels">
+                    <span>Basics</span>
+                    <span>History</span>
+                    <span>Symptoms</span>
+                    <span>Lifestyle</span>
+                </div>
+            </div>
+
+            <form id="assessmentForm" novalidate>
+                <!-- Step 1: Basic Info & Biometrics -->
+                <div class="step-content active" id="step-1">
+                    <h2 class="mb-4">Basic Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="age" class="form-label">Age (years)</label>
+                        <input type="number" id="age" name="Age (yrs)" class="form-control" min="18" max="65" required placeholder="e.g. 28">
+                        <span class="form-error">Please enter a valid age between 18 and 65.</span>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="weight" class="form-label">Weight (kg)</label>
+                            <input type="number" id="weight" name="Weight (Kg)" class="form-control" min="30" max="200" step="0.1" required placeholder="e.g. 65">
+                            <span class="form-error">Please enter a valid weight.</span>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="height" class="form-label">Height (cm)</label>
+                            <input type="number" id="height" name="Height(Cm)" class="form-control" min="120" max="220" required placeholder="e.g. 165">
+                            <span class="form-error">Please enter a valid height.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="blood_group" class="form-label">Blood Group</label>
+                        <select id="blood_group" name="Blood Group" class="form-control" required>
+                            <option value="" disabled selected>Select your blood group</option>
+                            <option value="11">A+</option>
+                            <option value="12">A-</option>
+                            <option value="13">B+</option>
+                            <option value="14">B-</option>
+                            <option value="15">O+</option>
+                            <option value="16">O-</option>
+                            <option value="17">AB+</option>
+                            <option value="18">AB-</option>
+                        </select>
+                        <span class="form-error">Please select a blood group.</span>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="waist" class="form-label">Waist (inches)</label>
+                            <input type="number" id="waist" name="Waist(inch)" class="form-control" min="20" max="60" required placeholder="e.g. 32">
+                            <span class="form-error">Please enter a valid waist measurement.</span>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="hip" class="form-label">Hip (inches)</label>
+                            <input type="number" id="hip" name="Hip(inch)" class="form-control" min="20" max="70" required placeholder="e.g. 40">
+                            <span class="form-error">Please enter a valid hip measurement.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Menstrual & Reproductive History -->
+                <div class="step-content" id="step-2">
+                    <h2 class="mb-4">Reproductive History</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Are your menstrual cycles regular?</label>
+                        <p class="text-secondary mb-2" style="font-size: 0.9rem;">Regular means cycles are roughly the same length every month (usually 21-35 days).</p>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="cycle_reg" name="Cycle_Irregular" value="0" required>
+                                <label for="cycle_reg">Yes, Regular</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="cycle_irreg" name="Cycle_Irregular" value="1" required>
+                                <label for="cycle_irreg">No, Irregular / Unpredictable</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cycle_length" class="form-label">Average Cycle Length (days)</label>
+                        <input type="number" id="cycle_length" name="Cycle length(days)" class="form-control" min="0" max="100" required placeholder="e.g. 28">
+                        <span class="form-error">Please enter an average cycle length (enter 0 if you have no periods).</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Are you currently pregnant?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="preg_yes" name="Pregnant(Y/N)" value="1" required>
+                                <label for="preg_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="preg_no" name="Pregnant(Y/N)" value="0" required>
+                                <label for="preg_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="abortions" class="form-label">Number of pregnancy losses (miscarriages or abortions)</label>
+                        <input type="number" id="abortions" name="No. of abortions" class="form-control" min="0" max="10" required placeholder="0">
+                        <span class="form-error">Please enter a valid number (0 or more).</span>
+                    </div>
+                </div>
+
+                <!-- Step 3: Symptoms -->
+                <div class="step-content" id="step-3">
+                    <h2 class="mb-4">Physical Symptoms</h2>
+                    <p class="text-secondary mb-4">Have you experienced any of the following recently?</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Unexplained, rapid weight gain (especially around the abdomen)?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="weightgain_yes" name="Weight gain(Y/N)" value="1" required>
+                                <label for="weightgain_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="weightgain_no" name="Weight gain(Y/N)" value="0" required>
+                                <label for="weightgain_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Excessive hair growth (hirsutism) on the face, chest, or stomach?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="hair_yes" name="hair growth(Y/N)" value="1" required>
+                                <label for="hair_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="hair_no" name="hair growth(Y/N)" value="0" required>
+                                <label for="hair_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Darkening of skin (acanthosis nigricans), especially in neck creases or armpits?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="skin_yes" name="Skin darkening (Y/N)" value="1" required>
+                                <label for="skin_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="skin_no" name="Skin darkening (Y/N)" value="0" required>
+                                <label for="skin_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Noticeable hair thinning or loss on your scalp?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="hairloss_yes" name="Hair loss(Y/N)" value="1" required>
+                                <label for="hairloss_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="hairloss_no" name="Hair loss(Y/N)" value="0" required>
+                                <label for="hairloss_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Persistent, severe acne or pimples?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="pimple_yes" name="Pimples(Y/N)" value="1" required>
+                                <label for="pimple_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="pimple_no" name="Pimples(Y/N)" value="0" required>
+                                <label for="pimple_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+                </div>
+
+                <!-- Step 4: Lifestyle -->
+                <div class="step-content" id="step-4">
+                    <h2 class="mb-4">Lifestyle Factors</h2>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Do you frequently consume fast food or highly processed meals?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="fastfood_yes" name="Fast food (Y/N)" value="1" required>
+                                <label for="fastfood_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="fastfood_no" name="Fast food (Y/N)" value="0" required>
+                                <label for="fastfood_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Do you engage in regular physical exercise (at least 30 mins, 3 times/week)?</label>
+                        <div class="radio-group">
+                            <div class="radio-pill">
+                                <input type="radio" id="exercise_yes" name="Reg.Exercise(Y/N)" value="1" required>
+                                <label for="exercise_yes">Yes</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="exercise_no" name="Reg.Exercise(Y/N)" value="0" required>
+                                <label for="exercise_no">No</label>
+                            </div>
+                        </div>
+                        <span class="form-error">Please make a selection.</span>
+                    </div>
+
+                    <div class="alert alert-info mt-5">
+                        <svg class="alert-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <div style="font-size: 0.9rem;">
+                            By submitting, you understand this tool provides an educational estimate, not a medical diagnosis. Your data is processed entirely on your device and will not be stored.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="btnPrev" class="btn btn-outline" style="visibility: hidden;">Back</button>
+                    <button type="button" id="btnNext" class="btn btn-primary">Next Step</button>
+                    <button type="submit" id="btnSubmit" class="btn btn-primary" style="display: none;">See My Results</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p class="text-secondary text-center" style="font-size: 0.85rem; max-width: 600px;">
+                This tool provides an educational risk estimate based on a statistical model and is not a substitute for professional medical diagnosis. Please consult a healthcare provider for any medical concerns.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

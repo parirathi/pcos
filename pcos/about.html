@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology & Privacy | PCOS Risk Check</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="learn.html">About PCOS</a></li>
+                    <li><a href="about.html" class="active">Methodology</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section" style="max-width: 800px;">
+        <h1 class="text-center mb-4">Methodology & Privacy</h1>
+        
+        <div class="card mb-5">
+            <h2>Our Privacy Commitment</h2>
+            <div class="alert alert-info mb-4">
+                <svg class="alert-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <div>
+                    <strong>Your data never leaves your device.</strong>
+                    <p class="mt-1" style="margin-bottom: 0;">This application runs entirely in your web browser. When you fill out the assessment, the calculations are performed locally on your computer or phone. We do not have a database, and we do not transmit, track, or store your health information.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <h2>How the Model Works</h2>
+            <p>Our risk prediction is powered by a Logistic Regression machine learning model trained on a clinical dataset of 541 patients.</p>
+            
+            <h3 class="mt-4 mb-2">Feature Selection</h3>
+            <p>To make this tool accessible without requiring blood tests or ultrasounds, the model was specifically trained using only 15 user-answerable features (such as age, BMI, menstrual cycle history, and visible symptoms). This allows for a preliminary screening but means the tool is less accurate than a full clinical diagnosis.</p>
+
+            <h3 class="mt-4 mb-2">Risk Thresholds</h3>
+            <p>The model outputs a probability score from 0 to 1, which we categorize into three bands based on statistical distributions in the training data:</p>
+            <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li class="mb-1"><span class="risk-low" style="font-weight: 600;">Low Risk:</span> Probability falls below the typical range seen in PCOS patients.</li>
+                <li class="mb-1"><span class="risk-moderate" style="font-weight: 600;">Moderate Risk:</span> Probability is elevated and overlaps with both groups.</li>
+                <li><span class="risk-high" style="font-weight: 600;">High Risk:</span> Probability strongly aligns with patterns seen in PCOS patients.</li>
+            </ul>
+        </div>
+
+        <div class="card mb-5">
+            <h2>Limitations</h2>
+            <p>This tool is intended for educational and awareness purposes only. It cannot replace a clinical diagnosis.</p>
+            <p>Medical professionals diagnose PCOS based on the Rotterdam Criteria, which requires two of the following three: irregular periods, excess androgens (via blood test or symptoms), and polycystic ovaries (via ultrasound). Because our tool cannot perform lab tests or imaging, its results are purely estimates based on statistical correlation.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </div>
+            <p class="text-secondary text-center" style="font-size: 0.85rem; max-width: 600px;">
+                This tool provides an educational risk estimate based on a statistical model and is not a substitute for professional medical diagnosis. Please consult a healthcare provider for any medical concerns.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

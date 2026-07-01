@@ -1,0 +1,73 @@
+:root {
+    /* Color Palette - Light Mode */
+    --bg-base: #FDF8F6;       /* warm off-white background */
+    --bg-surface: #FFFFFF;    /* card/panel background */
+    --bg-alt: #F3EBFA;        /* soft lavender section background */
+    --primary: #B294D8;       /* muted lavender — primary actions */
+    --primary-dark: #8C6FB8;  /* hover/active state */
+    --primary-light: #d6c6ea; /* subtle highlight */
+    
+    --accent-rose: #F4B8C2;   /* secondary accent, highlights */
+    --accent-mint: #BFE3D0;   /* low-risk / positive indicator */
+    --accent-amber: #FBE3A8;  /* moderate-risk indicator */
+    --accent-coral: #F3A6A0;  /* high-risk indicator — soft, not harsh red */
+    
+    --text-primary: #3A3550;  /* deep slate-violet, not pure black */
+    --text-secondary: #6E6680;
+    --text-inverse: #FFFFFF;
+    
+    --border-soft: #E8DEF2;
+    --border-focus: #B294D8;
+    
+    --shadow-sm: 0 4px 12px rgba(140, 111, 184, 0.08);
+    --shadow-md: 0 8px 24px rgba(140, 111, 184, 0.12);
+    --shadow-lg: 0 16px 48px rgba(140, 111, 184, 0.16);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    
+    --transition-fast: 200ms ease-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Typography */
+    --font-heading: 'Poppins', 'Quicksand', sans-serif;
+    --font-body: 'Inter', 'Nunito Sans', sans-serif;
+}
+
+[data-theme="dark"] {
+    /* Color Palette - Dark Mode */
+    --bg-base: #1A1821;       /* deep dark background */
+    --bg-surface: #24222E;    /* slightly lighter surface */
+    --bg-alt: #2D2738;        /* muted dark lavender */
+    
+    --primary: #9C78C4;
+    --primary-dark: #B294D8;
+    --primary-light: #6e5291;
+    
+    --accent-rose: #D18894;
+    --accent-mint: #9CC5B0;
+    --accent-amber: #D5B977;
+    --accent-coral: #D1807A;
+    
+    --text-primary: #F3F1F5;
+    --text-secondary: #B1A9BD;
+    --text-inverse: #1A1821;
+    
+    --border-soft: #383345;
+    --border-focus: #9C78C4;
+    
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0.01ms;
+        --transition-normal: 0.01ms;
+        --transition-slow: 0.01ms;
+    }
+}

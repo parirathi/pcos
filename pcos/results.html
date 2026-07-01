@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Results | PCOS Risk Check</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="learn.html">About PCOS</a></li>
+                    <li><a href="about.html">Methodology</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section pt-4">
+        <div id="loadingState" class="text-center py-5">
+            <h2>Analyzing your results...</h2>
+            <p>Our model is processing your answers locally on your device.</p>
+        </div>
+
+        <div id="errorState" class="text-center py-5" style="display: none;">
+            <h2 style="color: var(--accent-coral);">No Data Found</h2>
+            <p>Please complete the assessment to view your results.</p>
+            <a href="assessment.html" class="btn btn-primary mt-3">Take Assessment</a>
+        </div>
+
+        <div id="resultsContent" style="display: none;">
+            <h1 class="text-center mb-5">Your Risk Assessment</h1>
+
+            <div class="results-layout">
+                <!-- Left Column: The Gauge -->
+                <div class="card results-summary">
+                    <h2 class="mb-4">Estimated Risk Level</h2>
+                    
+                    <div class="gauge-wrapper">
+                        <div class="gauge-background"></div>
+                        <div class="gauge-fill" id="gaugeFill"></div>
+                        <div class="gauge-center">
+                            <div class="gauge-value" id="gaugeValue">--</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gauge-label" id="gaugeLabel">Analyzing</div>
+                    
+                    <p class="mt-4 text-secondary" id="riskDescription">Based on your answers, your risk profile is being calculated.</p>
+                    
+                    <div class="action-plan w-100 mt-4 text-left">
+                        <h3 class="mb-2">Next Steps</h3>
+                        <p id="nextStepsText">Loading recommendations...</p>
+                        <button class="btn btn-outline mt-3 w-100" onclick="window.print()">Print Results</button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contributing Factors -->
+                <div class="card">
+                    <h2 class="mb-4">Top Contributing Factors</h2>
+                    <p class="text-secondary mb-4">These factors from your answers contributed most significantly to your result.</p>
+                    
+                    <ul class="factors-list" id="factorsList">
+                        <!-- Factors injected via JS -->
+                    </ul>
+
+                    <div class="alert alert-info mt-4">
+                        <svg class="alert-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <div style="font-size: 0.9rem;">
+                            <strong>Note:</strong> Having risk factors does not guarantee you have PCOS, and lacking them doesn't guarantee you don't.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sticky Disclaimer -->
+            <div class="mt-5 text-center p-3" style="border: 1px solid var(--border-soft); border-radius: var(--radius-sm); background-color: var(--bg-alt);">
+                <strong style="color: var(--text-primary);">IMPORTANT DISCLAIMER</strong>
+                <p class="mt-2 mb-0" style="font-size: 0.9rem;">This tool provides an educational risk estimate based on a statistical model and is NOT a substitute for professional medical diagnosis, advice, or treatment. Always consult a qualified healthcare provider (like a gynecologist or endocrinologist) for proper medical evaluation.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 2rem;">
+        <div class="container footer-content">
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </div>
+            <p class="text-secondary text-center" style="font-size: 0.85rem; max-width: 600px;">
+                This tool provides an educational risk estimate based on a statistical model and is not a substitute for professional medical diagnosis. Please consult a healthcare provider for any medical concerns.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/predict.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PCOS | PCOS Risk Check</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="learn.html" class="active">About PCOS</a></li>
+                    <li><a href="about.html">Methodology</a></li>
+                    <li>
+                        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section" style="max-width: 800px;">
+        <h1 class="text-center mb-4">Understanding Polycystic Ovary Syndrome (PCOS)</h1>
+        
+        <div class="card mb-5">
+            <h2>What is PCOS?</h2>
+            <p>Polycystic Ovary Syndrome (PCOS) is a common hormonal condition that affects how a woman's ovaries work. It is characterized by reproductive, endocrine, and metabolic abnormalities.</p>
+            <p>Despite its name, not all people with PCOS have cysts on their ovaries, and having cysts does not necessarily mean you have PCOS.</p>
+        </div>
+
+        <div class="card mb-5">
+            <h2>Common Symptoms</h2>
+            <p>Symptoms usually become apparent during late teens or early twenties. They can include:</p>
+            <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li class="mb-1"><strong>Irregular Periods:</strong> Menstrual cycles may be infrequent, prolonged, or unpredictable.</li>
+                <li class="mb-1"><strong>Excess Androgen:</strong> Elevated levels of male hormones may result in physical signs, such as excess facial and body hair (hirsutism), and occasionally severe acne.</li>
+                <li class="mb-1"><strong>Weight Changes:</strong> Unexplained weight gain or difficulty losing weight.</li>
+                <li class="mb-1"><strong>Skin Changes:</strong> Darkening of the skin (acanthosis nigricans), particularly along neck creases, in the groin, and underneath breasts.</li>
+                <li><strong>Hair Thinning:</strong> Male-pattern baldness or thinning hair on the scalp.</li>
+            </ul>
+        </div>
+
+        <div class="card mb-5">
+            <h2>Why Early Awareness Matters</h2>
+            <p>Early diagnosis and treatment along with weight loss may reduce the risk of long-term complications such as type 2 diabetes and heart disease.</p>
+            <p>If you suspect you may have PCOS based on your symptoms or the results of our screening tool, we strongly recommend scheduling a visit with a healthcare provider, such as a gynecologist or endocrinologist.</p>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="assessment.html" class="btn btn-primary">Take the Risk Assessment</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                PCOS Risk Check
+            </div>
+            <p class="text-secondary text-center" style="font-size: 0.85rem; max-width: 600px;">
+                This tool provides an educational risk estimate based on a statistical model and is not a substitute for professional medical diagnosis. Please consult a healthcare provider for any medical concerns.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
